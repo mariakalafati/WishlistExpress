@@ -3,7 +3,6 @@ using WishlistExpress.Data;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Runtime.CompilerServices;
 
 namespace WishlistExpress.Controllers;
 
