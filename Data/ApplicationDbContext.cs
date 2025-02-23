@@ -17,5 +17,6 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<Wishlist> Wishlists { get; set; }
+    public DbSet<Submission> Submissions { get; set; }
 
 }
