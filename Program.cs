@@ -1,8 +1,18 @@
 // Creates instance of the application.
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
+using WishlistExpress.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Instance Injection
+builder.Services.AddScoped<ApplicationDbContext>();
+
+string connString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(connString, ServerVersion.AutoDetect(connString)));
 
 var app = builder.Build();
 
